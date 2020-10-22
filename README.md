@@ -14,13 +14,13 @@ Programs for S3 Data Structures Lab
 
 Please 🌟 and fork the repo!
 
-This is a repo for contributing algorithms in different languages.
+This is a repo for contributing algorithms to understand data structures for the course CS 201 .
 
-Adding algorithms for specific languages in the specified folder is necessary.
+Adding algorithms for specific Data structures  in the specified folder is necessary.
 Create your own folder if it doesn't exist.
 
 Eg:
-For adding patterns into C++ folder create a patterns folder in the directory.
+For adding Stacks and Queues  create a Stacks_and_Queues  folder in the directory.
 
 ## Getting started
 
