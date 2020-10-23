@@ -3,55 +3,61 @@
 
 #define MAX 10
 int a[100];
-int top = -1;
+int front=-1;
+int rear=-1;
 
 
 int isempty(){
-    if(top==-1)
+    if( front==-1 || rear==-1 || front>rear )
         return 1;
     else 
         return 0;
 }
 
 int isfull(){
-    if(top>=-MAX -1)
+    if(rear>=MAX -1)
         return 1;
     else 
         return 0;
 } 
 int peek(){
     if(isempty()){
-        printf("Empty Stack \n");
+        printf("Empty Queue \n");
         return 0;
     } 
-    return(a[top]);
+    return(a[front]);
 }
 
-int pop(){
+int dequeue(){
     if(isempty()){
         printf("Empty Stack \n");
         return 0;
     }
-    int data = a[top];
-    top--;
+    int data = a[front];
+    front++;
     return(data);
 }
 
-void  push(int data){
+void  enqueue(int data){
     if(isfull()){
         printf("Stack Full \n");
         return;
     }
-    top++;
-    a[top]= data;
+    if(front==-1){
+        front++;
+        rear++;
+    }
+    else
+    rear++;
+    a[rear]= data;
 }
 void view(){
     if(isempty()){
         printf("Empty Stack \n");
         return;
     }
-    printf("stack is: \n");
-    for(int i=0;i<=top;i++){
+    printf("Queue is: \n");
+    for(int i=front;i<=rear;i++){
         printf("%d ",a[i]);
     }
     printf("\n");
@@ -61,24 +67,24 @@ int main(void) {
     int data;
     do{
         printf("MENU\n");
-        printf("1. Push\n");
-        printf("2. Pop\n");
+        printf("1. En Queue\n");
+        printf("2. De Quque\n");
         printf("3. Peek\n");
-        printf("4. View Stack \n");
+        printf("4. View Queue \n");
         printf("Enter your option: \n");
         scanf("%d",&option);
         switch(option){
             case 1:{
                     printf("enter data to be pushed: \n");
                     scanf("%d",&data);
-                    push(data);
-                    printf("Pushed %d \n", data);
+                    enqueue(data);
+                    printf("enqueued %d \n", data);
                     getchar();
                     break;
-            }
+            } 
             case 2:{
-                    data = pop();
-                    printf("Popped %d \n", data);
+                    data = dequeue();
+                    printf("dequeued %d \n", data);
                     getchar();
                     break;
             }
