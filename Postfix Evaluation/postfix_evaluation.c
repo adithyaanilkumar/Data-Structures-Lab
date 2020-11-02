@@ -79,12 +79,12 @@ int main(void) {
     for(int i=0;i<strlen(string);i++){
         char symbol= string[i];
         if(isdigit(symbol)){
-            push(((int)symbol - '0'), operands, &top_operand);
+            push((symbol - '0'), operands, &top_operand);
         }
         else{
             double operand_1 = pop(operands, &top_operand);
             double operand_2 = pop(operands, &top_operand);
-            double value = operate(symbol,operand_1,operand_2);
+            double value = operate(symbol,operand_2,operand_1);
             push(value, operands, &top_operand);
         }
     }
