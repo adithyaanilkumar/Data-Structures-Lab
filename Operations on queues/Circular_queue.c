@@ -30,7 +30,7 @@ int peek(){
 
 int dequeue(){
     if(isempty()){
-        printf("Empty Stack \n");
+        printf("Empty queue \n");
         return 0;
     }
     int data = a[front];
@@ -51,7 +51,7 @@ int dequeue(){
 
 void  enqueue(int data){
     if(isfull()){
-        printf("Stack Full \n");
+        printf("queue Full \n");
         return;
     }
     
